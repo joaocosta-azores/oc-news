@@ -1,0 +1,10 @@
+name: vancoders.news::lang.category.plural
+form: $/vancoders/news/models/category/fields.yaml
+modelClass: Vancoders\News\Models\Category
+defaultRedirect: vancoders/news/categories
+create:
+    redirect: 'vancoders/news/categories/update/:id'
+    redirectClose: vancoders/news/categories
+update:
+    redirect: vancoders/news/categories
+    redirectClose: vancoders/news/categories

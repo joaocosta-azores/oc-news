@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table vancoders_news_categories'
+    - builder_table_create_vancoders_news_categories.php
+1.0.3:
+    - 'Created table vancoders_news_posts'
+    - builder_table_create_vancoders_news_posts.php
+1.0.4:
+    - 'Updated table vancoders_news_categories'
+    - builder_table_update_vancoders_news_categories.php
+1.0.5:
+    - 'Updated table vancoders_news_categories'
+    - builder_table_update_vancoders_news_categories_2.php
+1.0.6:
+    - 'Updated table vancoders_news_posts'
+    - builder_table_update_vancoders_news_posts.php
+1.0.7:
+    - 'Updated table vancoders_news_posts'
+    - builder_table_update_vancoders_news_posts_2.php
+1.0.8:
+    - 'Updated table vancoders_news_posts'
+    - builder_table_update_vancoders_news_posts3.php

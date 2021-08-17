@@ -1,0 +1,23 @@
+columns:
+    name:
+        label: 'vancoders.news::lang.post.title'
+        type: text
+        searchable: true
+    slug:
+        label: 'vancoders.news::lang.post.slug'
+        type: text
+        invisible: true
+    category_id:
+        label: 'vancoders.news::lang.post.category'
+        type: text
+        relation: post_category
+        select: name
+    author:
+        label: 'vancoders.news::lang.post.author'
+        type: text
+    created_at:
+        label: 'vancoders.news::lang.post.created_at'
+        type: datetime
+    updated_at:
+        label: 'vancoders.news::lang.post.updated_at'
+        type: datetime

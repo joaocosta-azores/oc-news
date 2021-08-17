@@ -1,0 +1,50 @@
+fields:
+    category_id:
+        label: Secção
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    image:
+        label: Imagem
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        type: fileupload
+    name:
+        label: Título
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    author:
+        label: Autor
+        span: auto
+        type: text
+    subhead:
+        label: 'vancoders.news::lang.post.subhead'
+        span: full
+        type: text
+        hidden: true
+    introduction:
+        label: 'vancoders.news::lang.post.introduction'
+        size: large
+        span: auto
+        required: 1
+        type: textarea
+    content:
+        label: Content
+        size: huge
+        span: full
+        required: 1
+        type: richeditor

@@ -1,0 +1,11 @@
+fields:
+    hint:
+        type: hint
+        path: $/vancoders/news/models/settings/_hint.htm
+    disable_title:
+        label: 'vancoders.news::lang.settings.activated'
+        type: section
+    subhead:
+        label: 'vancoders.news::lang.post.subhead'
+        span: left
+        type: switch

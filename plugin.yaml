@@ -1,0 +1,20 @@
+plugin:
+    name: 'vancoders.news::lang.plugin.name'
+    description: 'vancoders.news::lang.plugin.description'
+    author: Vancoders
+    icon: icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'vancoders.news::lang.plugin.name'
+        url: vancoders/news/posts
+        icon: icon-newspaper-o
+        sideMenu:
+            side-menu-news:
+                label: 'vancoders.news::lang.news.plural'
+                url: vancoders/news/posts
+                icon: icon-newspaper-o
+            side-menu-category:
+                label: 'vancoders.news::lang.category.plural'
+                url: vancoders/news/categories
+                icon: icon-tag

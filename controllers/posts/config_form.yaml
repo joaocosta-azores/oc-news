@@ -1,0 +1,10 @@
+name: vancoders.news::lang.news.plural
+form: $/vancoders/news/models/post/fields.yaml
+modelClass: Vancoders\News\Models\Post
+defaultRedirect: vancoders/news/posts
+create:
+    redirect: 'vancoders/news/posts/update/:id'
+    redirectClose: vancoders/news/posts
+update:
+    redirect: vancoders/news/posts
+    redirectClose: vancoders/news/posts

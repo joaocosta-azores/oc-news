@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: Nome
+        span: auto
+        required: 1
+        type: text
+        comment: 'Eg:. Notícias'
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text

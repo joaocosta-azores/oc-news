@@ -1,0 +1,14 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><?= e(trans('indikator.news::lang.menu.posts')) ?></li>
+    <li>
+        <span class="text-info"><strong><?= Vancoders\News\Models\Post::where('status', 1)->count() ?></strong> <?= e(trans('vancoders.news::lang.post.status_published')) ?></span>
+        &nbsp; | &nbsp;
+        <span class="text-danger"><strong><?= Vancoders\News\Models\Post::where('status', 2)->count() ?></strong> <?= e(trans('vancoders.news::lang.post.status_hidden')) ?></span>
+        &nbsp; | &nbsp;
+        <span class="text-warning"><strong><?= Vancoders\News\Models\Post::where('status', 3)->count() ?></strong> <?= e(trans('vancoders.news::lang.post.status_draft')) ?></span>
+    </li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= $this->listRender() ?>

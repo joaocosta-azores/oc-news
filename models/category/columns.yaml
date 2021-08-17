@@ -1,0 +1,5 @@
+columns:
+    name:
+        label: Nome
+        type: text
+        searchable: true
