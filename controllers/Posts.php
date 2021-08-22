@@ -1,9 +1,7 @@
 <?php namespace Vancoders\News\Controllers;
 
 use Backend\Classes\Controller;
-use BackendMenu;
-use October\Rain\Support\Facades\Flash;
-use Vancoders\News\Models\Post;
+use Backend\Facades\BackendMenu;
 
 class Posts extends Controller
 {
@@ -16,12 +14,5 @@ class Posts extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Vancoders.News', 'main-menu-item', 'side-menu-news');
-    }
-
-    function onTest()
-    {
-        $post = new Post();
-        $count = $post->importFromOldDatabase();
-        Flash::success("Imported successfully!");
     }
 }

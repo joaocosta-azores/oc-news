@@ -18,3 +18,7 @@ navigation:
                 label: 'vancoders.news::lang.category.plural'
                 url: vancoders/news/categories
                 icon: icon-tag
+            side-menu-settings:
+                label: 'vancoders.news::lang.settings.label'
+                url: system/settings/update/vancoders/news/settings
+                icon: icon-cogs

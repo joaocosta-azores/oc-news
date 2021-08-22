@@ -4,6 +4,9 @@ use Model;
 use Vancoders\News\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Vancoders\News\Models\Settings;
+use Winter\Translate\Models\Locale;
+use Faker\Factory;
+use System\Models\File;
 
 /**
  * Model
@@ -41,6 +44,13 @@ class Post extends Model
         'content'
     ];
 
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
     public $attachOne = [
         'image' => 'System\Models\File'
     ];
@@ -57,7 +67,52 @@ class Post extends Model
         ]
     ];
 
-    public function importFromOldDatabase() {
+    /**
+     * @param int $quantity
+     * @throws \Exception
+     */
+
+    static function createDummy(int $quantity = 1)
+    {
+        $i = 0;
+        $faker = Factory::create();
+        while($i < $quantity) {
+
+            $category = Category::first();
+            if ($category == null) {
+                $name = $faker->words(rand(3,5), true);
+                $category_id = Category::create([
+                    'name' => $name,
+                    'slug' => str_replace($name, " ", "-"),
+                ])->id;
+            } else {
+                $category_id = $category->id;
+            }
+            $name = $faker->words(rand(3,5), true);
+            $file = new File;
+            $post = Post::create([
+                'category_id' => $category_id,
+                'name' => $name,
+                'slug' => str_replace($name, " ", "-"),
+                'author' => $faker->name,
+                'subhead' => $faker->words(rand(5,10), true),
+                'introduction' => $faker->sentence(rand(12,20)),
+                'content' =>  $faker->paragraph(4),
+                'image' =>  $file->fromUrl('https://picsum.photos/960/540'),
+            ]);
+            $created_post = Post::find($post->id);
+            // Set translations for record
+            foreach (Locale::listAvailable() as $code => $lang) {
+                $created_post->translateContext($code);
+                $created_post->name = $faker->words(rand(3,5), true);
+                $created_post->slug = str_replace($name, " ", "-");
+                $created_post->save();
+            }
+            $i++;
+        }
+    }
+
+    static function importData() {
         $oldrecords = Db::connection('oldmysql')->select('select title, content, timestamp,  datetime, file_name, relative_path, author, pubtype_id from publication INNER JOIN publication_pubtype ON publication.id = publication_pubtype.publication_id limit 60');
         foreach($oldrecords as $record) {
             $post = new Post;
@@ -79,7 +134,11 @@ class Post extends Model
         }
     }
 
-    public function filterCategory()
+    /**
+     * @return array
+     */
+
+    public function filterCategory(): array
     {
         $result = [];
 

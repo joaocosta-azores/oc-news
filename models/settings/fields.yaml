@@ -2,8 +2,12 @@ fields:
     hint:
         type: hint
         path: $/vancoders/news/models/settings/_hint.htm
+    menu:
+        type: partial
+        path: $/vancoders/news/models/settings/_list_toolbar.htm
+        cssClass: 'text-right'
     disable_title:
-        label: 'vancoders.news::lang.settings.activated'
+        label: 'vancoders.news::lang.settings.title'
         type: section
     subhead:
         label: 'vancoders.news::lang.post.subhead'

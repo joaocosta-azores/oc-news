@@ -6,12 +6,15 @@
     'button' => [
         'import' => 'import',
         'advertisement' => 'Publicidade',
+        'generate_dummy_data' => 'Gerar Dummy Data',
+        'import_data' => 'Importar Data',
     ],
     'news' => [
         'singular' => 'Notícia',
         'plural' => 'Notícias'
     ],
     'settings' => [
+        'label' => 'Configurações',
         'title' => 'Configurações das notícia',
         'description' => 'Gerir configurações das notícias.',
         'category' => 'Vancoders',

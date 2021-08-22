@@ -37,4 +37,11 @@ class Category extends Model
         'name',
         ['slug', 'index' => true]
     ];
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
 }
